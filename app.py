@@ -1,17 +1,23 @@
-from flask import Flask
+#aplicaicon en flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "¡Hello,{nombre}!"
-def usuarios (nombre)!:
+   # return "Hola, Mundo!!!!!!!"
+   return render_template('index.html', title='inicio')
+    
 
-    #ruta de servicios
-    @app.route('/servicios')
-    def servicios():
-        retur "servicios disponibles:"
+@app.route('/usuario/<nombre!')
+def usuario(nombre):
+    retur f"Hola, {nombre!}"
 
+@app.route('/about)
+def about():
+   # return "Esta es una aplicacion de ejemplo en flask."
+   return render_template('about.html',title='Acerca de')
 
-if __name__ == "__main__":
-    app.run(debug=True)
+@app.route('/contacto')
+def contacto():
+    return "contacto con nosotros en"
